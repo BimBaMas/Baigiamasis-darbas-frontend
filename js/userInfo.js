@@ -13,7 +13,6 @@ function IsLoggedIn() {
     window.location.href = "index.html";
   } else {
     GetData();
-    GetAddress();
   }
 }
 
@@ -21,7 +20,13 @@ function GetData() {
   fetch(USERINFO + "id?id=" + sessionStorage.getItem("userId"))
     .then((Response) => Response.json())
     .then((info) => {
-      FillData(info);
+      if (info.status == 404) {
+        sessionStorage.setItem("step", "2");
+        window.location.href = "register.html";
+      } else {
+        FillData(info);
+        GetAddress();
+      }
     });
 }
 
@@ -29,6 +34,10 @@ function GetAddress() {
   fetch(USERADDRESS + "id?id=" + sessionStorage.getItem("userId"))
     .then((Response) => Response.json())
     .then((address) => {
+      if (address.status == 404) {
+        sessionStorage.setItem("step", "3");
+        window.location.href = "register.html";
+      }
       FillAddress(address);
     });
 }
@@ -37,12 +46,10 @@ function FillData(info) {
   document.getElementById("name").innerText = info.name;
   document.getElementById("surName").innerText = info.surname;
   document.getElementById("personalId").innerText = info.personalId;
-  console.log(info.phoneNo);
   document.getElementById("phoneNo").innerText = info.phoneNo;
   document.getElementById("email").innerText = info.email;
   let avatar = `data:image/jpeg;base64,${info.avatar}`;
   document.getElementById("avatar").src = avatar;
-  console.log(avatar);
 }
 
 function FillAddress(address) {

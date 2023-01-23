@@ -19,7 +19,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <script src="js/register.js"></script>
+    <script src="js/register.js" defer></script>
   </head>
   <body>
     <div id="page-container">
@@ -33,10 +33,10 @@
         />
       </div>
       <div id="main-container">
-        <h1>ENTER YOUR INFO</h1>
+        <h1 id="header-message">ENTER YOUR LOGIN INFO</h1>
         <p id="error-msg"></p>
         <div id="info-container">
-          <div id="user-info-container">
+          <div id="user-info-container-1">
             <div class="row">
               <p class="left">Username :</p>
               <input
@@ -64,6 +64,14 @@
                 value="pass"
               />
             </div>
+            <input
+              type="button"
+              value="SUBMIT"
+              id="submit"
+              onclick="RegisterUser();"
+            />
+          </div>
+          <div id="user-info-container-2">
             <div class="row">
               <p class="left">Avatar prewiew :</p>
               <div class="right">
@@ -112,7 +120,7 @@
                 type="text"
                 class="right"
                 id="phoneno-to-register"
-                value="+370 123 12345"
+                value="+37012312345"
               />
             </div>
             <div class="row">
@@ -124,6 +132,14 @@
                 value="email@email.com"
               />
             </div>
+            <input
+              type="button"
+              value="SUBMIT"
+              id="submit"
+              onclick="RegisterInfo();"
+            />
+          </div>
+          <div id="user-info-container-3">
             <div class="row">
               <p class="left">Town :</p>
               <input
@@ -164,7 +180,7 @@
               type="button"
               value="SUBMIT"
               id="submit"
-              onclick="Register();"
+              onclick="RegisterAddress();"
             />
           </div>
         </div>

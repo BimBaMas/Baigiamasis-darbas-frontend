@@ -57,6 +57,7 @@ function DeleteUser(id) {
     .then((Response) => Response.json())
     .then(GetUsers(id));
 }
+
 function UpdateRole(id) {
   value = document.getElementById(`drop${id}`).value;
   fetch(USERS + "/Role?id=" + id + "&value=" + value, {

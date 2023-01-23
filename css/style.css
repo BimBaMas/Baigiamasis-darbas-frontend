@@ -63,7 +63,10 @@ html {
 }
 #menu-container,
 #main-container,
-#user-info-container {
+#user-info-container,
+#user-info-container-1,
+#user-info-container-2,
+#user-info-container-3 {
   width: 100%;
   display: flex;
   flex-direction: column;
