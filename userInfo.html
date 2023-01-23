@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/userInfo.js" defer></script>
+  </head>
+  <body>
+    <!-- Menu -->
+    <div id="page-container">
+      <div id="menu-container">
+        <input type="button" value="MENU" class="menu-btn" />
+        <input
+          type="button"
+          value="MY INFO"
+          class="menu-btn"
+          onclick="location.href='userInfo.html'"
+        />
+        <input
+          type="button"
+          value="UPDATE INFO"
+          class="menu-btn"
+          onclick="location.href='updatedata.html'"
+        />
+        <input
+          type="button"
+          value="ADMIN CORNER"
+          class="menu-btn"
+          onclick="location.href='admin.html'"
+        />
+        <input
+          type="button"
+          value="LOGOUT"
+          class="menu-btn"
+          onclick="LogOut();"
+        />
+      </div>
+      <!-- Menu end -->
+
+      <div id="main-container">
+        <h1>MY INFO</h1>
+        <p id="error-msg"></p>
+        <div id="info-container">
+          <img id="avatar" src="img/cat.jpg" alt="JPG" />
+          <div id="user-info-container">
+            <div class="row">
+              <p class="left">Name :</p>
+              <p class="right" id="name">Vardenis</p>
+            </div>
+            <div class="row">
+              <p class="left">Surname :</p>
+              <p class="right" id="surName">Pavardenis</p>
+            </div>
+            <div class="row">
+              <p class="left">Personal ID :</p>
+              <p class="right" id="personalId">39110101234</p>
+            </div>
+            <div class="row">
+              <p class="left">Phone no :</p>
+              <p class="right" id="phoneNo">+370 123 12345</p>
+            </div>
+            <div class="row">
+              <p class="left">Email :</p>
+              <p class="right" id="email">email@email.com</p>
+            </div>
+            <div class="row">
+              <p class="left">Address :</p>
+              <p class="right" id="address">Kaunas, Gatves g. 1A - 13</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

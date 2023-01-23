@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/updatedata.js"></script>
+  </head>
+  <body>
+    <div id="page-container">
+      <!-- Menu -->
+      <div id="menu-container">
+        <input type="button" value="MENU" class="menu-btn" />
+        <input
+          type="button"
+          value="MY INFO"
+          class="menu-btn"
+          onclick="location.href='userInfo.html'"
+        />
+        <input
+          type="button"
+          value="UPDATE INFO"
+          class="menu-btn"
+          onclick="location.href='updatedata.html'"
+        />
+        <input
+          type="button"
+          value="ADMIN CORNER"
+          class="menu-btn"
+          onclick="location.href='admin.html'"
+        />
+        <input
+          type="button"
+          value="LOGOUT"
+          class="menu-btn"
+          onclick="LogOut();"
+        />
+      </div>
+      <!-- Menu end -->
+      <div id="main-container">
+        <h1>UPDATE YOUR INFO</h1>
+        <p id="error-msg"></p>
+        <div id="info-container">
+          <img id="avatar" src="img/cat.jpg" alt="" />
+          <div id="user-info-container">
+            <div class="row">
+              <p class="left">Name :</p>
+              <input
+                type="text"
+                class="right"
+                id="name-to-update"
+                value="Vardenis"
+                onblur="ValidateString('Name', 'name-to-update');"
+              />
+            </div>
+            <div class="row">
+              <p class="left">Surname :</p>
+              <input
+                type="text"
+                class="right"
+                id="surname-to-update"
+                value="Pavardenis"
+                onblur="ValidateString('Surname', 'surname-to-update');"
+              />
+            </div>
+            <div class="row">
+              <p class="left">Personal ID :</p>
+              <input
+                type="text"
+                class="right"
+                id="personalid-to-update"
+                value="39110101234"
+                onblur="ValidateNumbers('PersonalId', 'personalid-to-update');"
+              />
+            </div>
+            <div class="row">
+              <p class="left">Phone no :</p>
+              <input
+                type="text"
+                class="right"
+                id="phoneno-to-update"
+                value="+370 123 12345"
+                onblur="ValidatePhoneNo('PhoneNo', 'phoneno-to-update');"
+              />
+            </div>
+            <div class="row">
+              <p class="left">Email :</p>
+              <input
+                type="email"
+                class="right"
+                id="email-to-update"
+                value="email@email.com"
+                onblur="ValidateEmail('Email', 'email-to-update');"
+              />
+            </div>
+            <div class="row">
+              <p class="left">Town :</p>
+              <input
+                type="text"
+                class="right"
+                id="town-to-update"
+                value="Kaunas"
+                onblur="ValidateAddress('Town', 'town-to-update');"
+              />
+            </div>
+            <div class="row">
+              <p class="left">Street :</p>
+              <input
+                type="text"
+                class="right"
+                id="street-to-update"
+                value="Gatves g."
+                onblur="ValidateAddress('Street', 'street-to-update');"
+              />
+            </div>
+            <div class="row">
+              <p class="left">House no. :</p>
+              <input
+                type="text"
+                class="right"
+                id="house-to-update"
+                value="13A"
+                onblur="ValidateAddress('HouseNo', 'house-to-update');"
+              />
+            </div>
+            <div class="row">
+              <p class="left">Flat no. :</p>
+              <input
+                type="text"
+                class="right"
+                id="flat-to-update"
+                value="1B"
+                onblur="ValidateAddress('FlatNo', 'flat-to-update');"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
